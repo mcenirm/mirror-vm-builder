@@ -58,8 +58,31 @@ Vagrant.configure(2) do |config|
 end
 ```
 
-Spinup virtual machine
+Start virtual machine
 
 ```Shell
 vagrant up --provider virtualbox
+```
+
+Halt virtual machine
+
+```Shell
+vagrant halt
+```
+
+Configure the virtual machine to see the external USB hard drive
+
+* Open VirtualBox Manager
+  * Edit settings for `mirror-vm-builder_default_XXXXXXXXXXXXX_XXXXX`
+    * Ports
+      * USB
+        * [X] Enable USB Controller
+        * [X] USB 3.0 (xHCI) Controller
+        * Add new filter for external hard drive
+      * Click OK to save settings
+
+Restart virtual machine
+
+```Shell
+vagrant up
 ```
