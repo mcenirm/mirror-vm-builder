@@ -47,6 +47,17 @@ Create boilerplate `Vagrantfile`
 vagrant init centos/7
 ```
 
+Disable insertion of new keypair, because `exFAT` lacks
+support for permissions. Edit `Vagrantfile` and set:
+
+```Ruby
+Vagrant.configure(2) do |config|
+  [...]
+  config.ssh.insert_key = false
+  [...]
+end
+```
+
 Spinup virtual machine
 
 ```Shell

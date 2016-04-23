@@ -39,6 +39,10 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
+  # exFAT does not support permissions, so chmod cannot remove group and
+  # world write permissions on the inserted private key file.
+  config.ssh.insert_key = false
+
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
